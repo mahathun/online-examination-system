@@ -1,0 +1,392 @@
+<html>
+<head>
+<title> Sign UP </title>
+
+<!-- Bootstrap core CSS -->
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- signup css-->
+<link href="lib/css/signup.css" rel="stylesheet">
+
+<!-- jquery -->	
+<script type="text/javascript" src="lib/js/jquerry.js">
+
+</script>
+<!-- bootstrap js -->
+<script type="text/javascript" src="lib/js/bootstrap.min.js">
+
+</script>
+
+<!-- datepicker css -->
+<link href="lib/css/datepicker3.css" rel="stylesheet">
+<!-- datepicker js -->
+<script type="text/javascript" src="lib/js/bootstrap-datepicker.js">
+
+</script>
+
+<script type="text/javascript" >
+	$(function(){
+		$('a[title]').tooltip();
+	});
+
+
+	function changeUserType(x){
+		if(x=="admin"){	
+			$('#admin').removeClass('btn-default').addClass('btn-primary');			
+			$('#teacher').removeClass('btn-primary').addClass('btn-default');
+			$('#student').removeClass('btn-primary').addClass('btn-default');
+			}else if(x=="teacher"){
+				$('#admin').removeClass('btn-primary').addClass('btn-default');			
+				$('#teacher').removeClass('btn-default').addClass('btn-primary');
+				$('#student').removeClass('btn-primary').addClass('btn-default');		
+				}else if(x=="student"){
+					$('#admin').removeClass('btn-primary').addClass('btn-default');			
+					$('#teacher').removeClass('btn-primary').addClass('btn-default');
+					$('#student').removeClass('btn-default').addClass('btn-primary');		
+					}
+		
+		}
+		
+		
+		function toggleGender(y){
+			if(y=='male'){		
+				$('#male').removeClass('btn-default').addClass('btn-primary');
+				$('#female').removeClass('btn-primary').addClass('btn-default');
+				}else if(y=='female'){
+					$('#female').removeClass('btn-default').addClass('btn-primary');
+					$('#male').removeClass('btn-primary').addClass('btn-default');				
+					}
+			}
+			
+			
+$(document).ready(function () {
+                
+                $('#datepicker input').datepicker({
+                    format: "yyyy-mm-dd",
+                    todayBtn: "linked",
+                    todayHighlight: true,
+                    startDate: "1987-1-1",
+                    startView: 2,
+                    autoclose: true
+                });  
+            
+            });
+</script>
+</head>
+
+<body>
+
+<section style="background:#efefe9;">
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    
+                    <div class="board-inner">
+                    <ul class="nav nav-tabs" id="myTab">
+                    <div class="liner"></div>
+                 <li id="home-li" class="active" >
+                     <a href="#home" data-toggle="tab" title="welcome">
+                      <span class="round-tabs one">
+                              <i class="glyphicon glyphicon-home icon-place"></i>
+                      </span> 
+                  </a></li>
+
+                  <li id="profile-li"><a href="#profile" data-toggle="tab" title="Personal Information">
+                     <span class="round-tabs two">
+                         <i class="glyphicon glyphicon-user icon-place" ></i>
+                     </span> 
+           </a>
+                 </li>
+                 
+                 <li id="degree-li" ><a href="#degree" data-toggle="tab" title="bootsnipp goodies">
+                     <span class="round-tabs three">
+                          <i class="glyphicon glyphicon-book icon-place"></i>
+                     </span> </a>
+                     </li>
+
+                     <li id="msg-li"><a href="#settings" data-toggle="tab" title="blah blah">
+                         <span class="round-tabs four">
+                              <i class="glyphicon glyphicon-comment icon-place"></i>
+                         </span> 
+                     </a></li>
+
+                     <li><a href="#doner" data-toggle="tab" title="completed">
+                         <span class="round-tabs five">
+                              <i class="glyphicon glyphicon-ok icon-place"></i>
+                         </span> </a>
+                     </li>
+                     
+                     </ul></div>
+
+                     <div class="tab-content">
+                      <div class="tab-pane fade in active" id="home">
+
+                          <h3 class="head text-center">Welcome...</h3>
+                          <p class="narrow text-center">
+                              Please select the user type,
+                          </p>
+                          
+                          <div class="col-md-12">
+										<div class="btn-group div-center center-block" =>
+ 											<button id="admin" type="button" class="btn btn-default" onclick="changeUserType('admin')">Admin</button>
+  											<button id="teacher" type="button" class="btn btn-default" onclick="changeUserType('teacher')">Teacher</button>
+  											<button id="student" type="button" class="btn btn-primary" onclick="changeUserType('student')">Student</button>
+										</div>                          
+                          </div>
+                          
+                          <div class="col-md-12">
+                          		<p class="text-center">
+                   			 		<a href="#profile" data-toggle="tab" data-original-title="profile" class="btn btn-success btn-outline-rounded green" onclick="$('#home-li').removeClass('active');$('#profile-li').addClass('active')"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-user"></span></a>
+                					</p>
+                				</div>
+                      </div>
+                      
+                      <div class="tab-pane fade" id="profile">
+                          <h3 class="head text-center">Personal Information</h3>
+                          <p class="narrow text-center">
+                             
+                             
+                             <!-- Row start -->
+ 											 <div class="row">
+    <div class="col-md-10 col-sm-6 col-xs-12 div-block-center center-block">
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <i class="icon-calendar"></i>
+          <h3 class="panel-title">Section 1</h3>
+        </div>
+       
+        <div class="panel-body">
+          
+
+
+
+				<div class="row form-group">
+              <label class="col-md-2 control-label">Name</label>
+              <div class="col-md-10">
+                <div class="row">
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="First Name">
+                  </div>
+                  <div class="col-md-4 ">
+                    <input type="text" class="form-control" placeholder="Middle Name">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Last Name">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+				
+
+
+
+
+            <div class="row form-group">
+              <label class="col-md-2 control-label">Reg. No.</label>
+              <div class="col-md-10">
+                <input type="text" name="regular" class="form-control" placeholder="Registration Number">
+              </div>
+            </div>
+            
+            
+            <div class="row form-group">
+              <label class="col-md-2 control-label">Gender</label>
+              
+              <div class="col-md-10">
+              		<div class="btn-group div-center"> 
+   						 <button id="male" class="btn btn-sm btn-primary" onclick="toggleGender('male')">Male</button>
+   					 		<button id="female" class="btn btn-sm btn-default" onclick="toggleGender('female')">Female</button>
+  						</div>
+  					</div>
+            </div>
+            
+            
+            
+            <div class="row form-group">
+              <label class="col-md-2 control-label">Date of Birth</label>
+              <div id="datepicker" class="col-md-10">
+                <input id="dob" type="text" type="text" class="form-control" placeholder="yyyy-mm-dd">
+              </div>
+            </div>
+            
+            
+            <div class="row form-group">
+              <label class="col-md-2 control-label">E-mail</label>
+              <div class="col-md-10">
+                <input type="email" name="regular" class="form-control" placeholder="e-mail address">
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  										<!-- Row end -->
+                             
+                             
+                          </p>
+                          
+                          <p class="text-center">
+                    <a href="#degree" data-toggle="tab" data-original-title="profile" class="btn btn-success btn-outline-rounded green" onclick="$('#profile-li').removeClass('active');$('#degree-li').addClass('active')"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-book"></span></a>
+                </p>
+                          
+                      </div>
+                      
+                      
+                      
+                      
+                      <div class="tab-pane fade" id="degree">
+                          <h3 class="head text-center">Degree</h3>
+                          <p class="narrow text-center">
+                              
+                             
+                             
+                                                   <!-- Row start -->
+ 											 <div class="row">
+    <div class="col-md-10 col-sm-6 col-xs-12 div-block-center center-block">
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <i class="icon-calendar"></i>
+          <h3 class="panel-title">Secton 2</h3>
+        </div>
+       
+        <div class="panel-body">
+          
+
+
+
+				<div class="row form-group">
+              <label class="col-md-2 control-label">Degree name/Code</label>
+              <div class="col-md-10">
+                <div class="row">
+                  	<div class="col-md-12">
+                  	<select class="form-control">
+ 								   <option>1</option>
+  									<option>2</option>
+  									<option>3</option>
+  									<option>4</option>
+  									<option>5</option>
+  							
+							</select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+				
+
+
+
+
+            <div class="row form-group">
+              <label class="col-md-2 control-label">Year</label>
+              <div class="col-md-3">
+                		<select class="form-control">
+ 								   <option>1</option>
+  									<option>2</option>
+  									<option>3</option>
+  									<option>4</option>
+  									<option>5</option>
+  							
+							</select>
+              </div>
+              <div class="col-md-2">&nbsp;</div>
+              <label class="col-md-2 control-label">Semester</label>
+              <div class="col-md-3">
+                		<select class="form-control">
+ 								   <option>I</option>
+  									<option>II</option>
+  									
+							</select>
+              </div>
+            </div>
+            
+            
+            <div class="row form-group">
+              <label class="col-md-2 control-label">Subjects</label>
+              
+              <div class="col-md-10">
+              		<select multiple class="form-control">
+  							<option>1</option>
+  							<option>2</option>
+  							<option>3</option>
+  							<option>4</option>
+  							<option>5</option>
+  							<option>6</option>
+  							<option>7</option>
+  							<option>8</option>
+						</select>
+  					</div>
+            </div>
+            
+            
+            
+            <div class="row form-group">
+              <label class="col-md-2 control-label">Courses Registered</label>
+					<div class="col-md-10">
+						<select multiple class="form-control">
+							<optgroup label="Select multiple">
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+      <option>Siz</option>
+      <option>Seven</option>
+      <option>Nine</option>
+    </optgroup>
+    <optgroup label="Select one" style="display:none;">
+     <option>Four</option>
+     <option>Five</option>
+     <option>Six</option>
+    </optgroup>
+						</select>			
+					</div>              
+              
+            </div>
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  										<!-- Row end --> 
+                              
+                          </p>
+                          
+                          <p class="text-center">
+                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                </p>
+                      </div>
+                      <div class="tab-pane fade" id="settings">
+                          <h3 class="head text-center">Drop comments!</h3>
+                          <p class="narrow text-center">
+                              Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                          </p>
+                          
+                          <p class="text-center">
+                    <a href="#profile" onclick="" data-toggle="tab" title data-original-title="#profile" class="btn btn-success btn-outline-rounded green"> next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                </p>
+                      </div>
+                      <div class="tab-pane fade" id="doner">
+  <div class="text-center">
+    <i class="img-intro icon-checkmark-circle"></i>
+</div>
+<h3 class="head text-center">thanks for staying tuned! <span style="color:#f48260;">♥</span> Bootstrap</h3>
+<p class="narrow text-center">
+  Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+</p>
+</div>
+<div class="clearfix"></div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
+                   
